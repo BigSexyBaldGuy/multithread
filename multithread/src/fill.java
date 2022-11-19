@@ -11,7 +11,7 @@
 // Todo: change code back to original
 class fill {
     //private static int  array[] = new int[512 * 1024 * 1024];
-    private static int  array[] = new int[10];
+    private static int  array[] = new int[100];
 
     public static void main(String[] args)
     {
@@ -62,9 +62,9 @@ class RandomFill {
         PrintDemo PD = new PrintDemo();
 
         ThreadDemo T1 = new ThreadDemo( "Thread - 1 ", PD, arrayCopy,
-                0,5 );
+                0,50 );
         ThreadDemo T2 = new ThreadDemo( "Thread - 2 ", PD, arrayCopy,
-                5,10 );
+                50,100 );
 
         T1.start();
         T2.start();
@@ -77,13 +77,14 @@ class RandomFill {
             System.out.println("Interrupted");
         }
 
-        count=5;
+        count=0;
         return(count);
     }
 }
 
 
 class PrintDemo {
+
     public void printCount(String name, int array[], int arrayLength,
                            int startPosition, int stopPosition) {
         try {
